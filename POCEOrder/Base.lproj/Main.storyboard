@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,26 +20,93 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8Q-gT-XXL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="bCE-Qq-OO6"/>
                                 </constraints>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bph-0H-O7p">
-                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="304" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" rowHeight="167" id="wrI-8L-vB3" customClass="TableViewCell" customModule="POCEOrder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="167"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wrI-8L-vB3" id="AbR-Tr-XM0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="166.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rl8-iu-gel">
+                                                    <rect key="frame" x="15" y="11" width="345" height="145"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mhr-3m-1sm">
+                                                        <size key="itemSize" width="123" height="121"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="XKT-pm-AH8" customClass="CollectionViewCell" customModule="POCEOrder" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="123" height="121"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="123" height="121"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-VC-7oP">
+                                                                        <rect key="frame" x="7" y="7" width="109" height="109"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="a9K-VC-7oP" id="xLU-9l-Abs"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rl8-iu-gel" secondAttribute="trailing" id="59G-5F-b1v"/>
+                                                <constraint firstItem="Rl8-iu-gel" firstAttribute="leading" secondItem="AbR-Tr-XM0" secondAttribute="leadingMargin" id="69Y-pz-Pm6"/>
+                                                <constraint firstItem="Rl8-iu-gel" firstAttribute="top" secondItem="AbR-Tr-XM0" secondAttribute="topMargin" id="CFO-Ne-cdM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rl8-iu-gel" secondAttribute="bottom" id="M6Y-Zu-kFl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Rl8-iu-gel" id="Cok-MN-IJU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Db-NDd" customClass="DesignableTextField" customModule="POCEOrder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ucF-H2-Nnp"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bph-0H-O7p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0NJ-nS-bbX"/>
                             <constraint firstItem="m8Q-gT-XXL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Fh-A6-Foz"/>
+                            <constraint firstItem="zmm-Db-NDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Oi-Mq-l7t"/>
                             <constraint firstItem="m8Q-gT-XXL" firstAttribute="leading" secondItem="Bph-0H-O7p" secondAttribute="leading" id="7PV-wt-gNB"/>
-                            <constraint firstItem="m8Q-gT-XXL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JNR-ew-NMT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmm-Db-NDd" secondAttribute="trailing" id="AOa-w4-XpQ"/>
+                            <constraint firstItem="zmm-Db-NDd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HJN-Nz-Cnq"/>
                             <constraint firstItem="Bph-0H-O7p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jxa-Wp-mIx"/>
                             <constraint firstItem="Bph-0H-O7p" firstAttribute="top" secondItem="m8Q-gT-XXL" secondAttribute="bottom" id="OuC-5o-Dl8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bph-0H-O7p" secondAttribute="bottom" id="d09-3u-61Q"/>
                             <constraint firstItem="Bph-0H-O7p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gJh-Io-2ph"/>
+                            <constraint firstItem="m8Q-gT-XXL" firstAttribute="top" secondItem="zmm-Db-NDd" secondAttribute="bottom" id="iEL-6b-dId"/>
                             <constraint firstItem="m8Q-gT-XXL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r0V-6e-NLd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,11 +114,13 @@
                     <navigationItem key="navigationItem" id="Vnk-J5-5wq"/>
                     <connections>
                         <outlet property="featureSliderView" destination="m8Q-gT-XXL" id="loF-Dc-Qkm"/>
+                        <outlet property="searchField" destination="zmm-Db-NDd" id="Moy-sX-CMW"/>
+                        <outlet property="tableView" destination="Bph-0H-O7p" id="v7D-fZ-tEj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="296.80000000000001" y="2.2488755622188905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Klv-9c-Zjo">
@@ -68,7 +138,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaJ-Y9-WiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="9"/>
+            <point key="canvasLocation" x="-527" y="4"/>
         </scene>
     </scenes>
 </document>

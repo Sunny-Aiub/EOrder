@@ -8,14 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var featureSliderView: UIScrollView!
+    @IBOutlet weak var searchField: DesignableTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // featureSliderView.delegate = self
+        tableView.estimatedRowHeight = 120
+        tableView.tableFooterView = UIView()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        searchField.delegate = self
         
         //set up slider
         featureSliderView.isPagingEnabled = true
@@ -57,7 +65,6 @@ class ViewController: UIViewController {
                 featureView.sliderImage.addGestureRecognizer(tapGestureRecognizer)
             }
             
-            
         }
     }
     
@@ -70,8 +77,70 @@ class ViewController: UIViewController {
     }
     
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        print("textFieldDidBeginEditing")
+//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController
+//
+//        present(vc!, animated: true)
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        searchField.resignFirstResponder()
+        
+        return true
+    }
+    
+    
 }
 
+
+extension ViewController : UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Section Title \(section)"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+            return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        print(section, row)
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell
+        {
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if  row == 0 && section == 0{
+            print(section,row)
+        }else{
+            print(section,row)
+            
+        }
+    }
+    
+}
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //
 //        let page = scrollView.contentOffset.x / scrollView.frame.size.width

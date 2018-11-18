@@ -15,6 +15,10 @@
 		A34F541621A12FB30052DBA3 /* FeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34F541521A12FB30052DBA3 /* FeatureView.xib */; };
 		A34F541821A12FC50052DBA3 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F541721A12FC50052DBA3 /* FeatureView.swift */; };
 		A34F541B21A1342D0052DBA3 /* SliderFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */; };
+		A3502B0121A1770B00149FAB /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0021A1770B00149FAB /* DesignableTextField.swift */; };
+		A3502B0621A17EE900149FAB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0321A17EE900149FAB /* CollectionViewCell.swift */; };
+		A3502B0721A17EE900149FAB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0421A17EE900149FAB /* TableViewCell.swift */; };
+		A3502B0821A17EE900149FAB /* SliderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0521A17EE900149FAB /* SliderViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		A34F541521A12FB30052DBA3 /* FeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureView.xib; sourceTree = "<group>"; };
 		A34F541721A12FC50052DBA3 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFeatures.swift; sourceTree = "<group>"; };
+		A3502B0021A1770B00149FAB /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		A3502B0321A17EE900149FAB /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A3502B0421A17EE900149FAB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A3502B0521A17EE900149FAB /* SliderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 				A34F540321A124360052DBA3 /* ViewController.swift */,
 				A34F540521A124360052DBA3 /* Main.storyboard */,
 				A34F540A21A124360052DBA3 /* LaunchScreen.storyboard */,
+				A3502B0221A17ED600149FAB /* Cells */,
 				A3502AFF21A15DD000149FAB /* Supporting Files */,
 				A34F541921A134040052DBA3 /* Model */,
 				A34F540821A124360052DBA3 /* Assets.xcassets */,
@@ -75,6 +84,7 @@
 		A34F541921A134040052DBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3502B0021A1770B00149FAB /* DesignableTextField.swift */,
 				A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */,
 			);
 			path = Model;
@@ -87,6 +97,16 @@
 				A34F541721A12FC50052DBA3 /* FeatureView.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3502B0221A17ED600149FAB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3502B0321A17EE900149FAB /* CollectionViewCell.swift */,
+				A3502B0521A17EE900149FAB /* SliderViewCell.swift */,
+				A3502B0421A17EE900149FAB /* TableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +184,11 @@
 			files = (
 				A34F541821A12FC50052DBA3 /* FeatureView.swift in Sources */,
 				A34F541B21A1342D0052DBA3 /* SliderFeatures.swift in Sources */,
+				A3502B0621A17EE900149FAB /* CollectionViewCell.swift in Sources */,
+				A3502B0121A1770B00149FAB /* DesignableTextField.swift in Sources */,
 				A34F540421A124360052DBA3 /* ViewController.swift in Sources */,
+				A3502B0821A17EE900149FAB /* SliderViewCell.swift in Sources */,
+				A3502B0721A17EE900149FAB /* TableViewCell.swift in Sources */,
 				A34F540221A124360052DBA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
