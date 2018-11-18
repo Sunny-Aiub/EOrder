@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="304" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" rowHeight="167" id="wrI-8L-vB3" customClass="TableViewCell" customModule="POCEOrder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryTableViewCell" rowHeight="167" id="wrI-8L-vB3" customClass="CategoryTableViewCell" customModule="POCEOrder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wrI-8L-vB3" id="AbR-Tr-XM0">
@@ -46,24 +46,28 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="XKT-pm-AH8" customClass="CollectionViewCell" customModule="POCEOrder" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productsCollectionViewCell" id="XKT-pm-AH8" customClass="ProductsCollectionViewCell" customModule="POCEOrder" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="123" height="121"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="123" height="121"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-VC-7oP">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-VC-7oP">
                                                                         <rect key="frame" x="7" y="7" width="109" height="109"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <connections>
-                                                                <outlet property="imageView" destination="a9K-VC-7oP" id="xLU-9l-Abs"/>
+                                                                <outlet property="imageView" destination="a9K-VC-7oP" id="ENW-y3-LWE"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="wrI-8L-vB3" id="VZ8-ub-jID"/>
+                                                        <outlet property="delegate" destination="wrI-8L-vB3" id="pX2-UA-4Zq"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -74,12 +78,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="collectionView" destination="Rl8-iu-gel" id="Cok-MN-IJU"/>
+                                            <outlet property="ProductCollectionView" destination="Rl8-iu-gel" id="4JH-fF-IMf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pRg-28-whL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FIv-0c-Wzd"/>
+                                </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Db-NDd" customClass="DesignableTextField" customModule="POCEOrder" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Your Product Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Db-NDd" customClass="SearchTextField" customModule="POCEOrder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ucF-H2-Nnp"/>
@@ -89,6 +97,10 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifying-glass"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -113,9 +125,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vnk-J5-5wq"/>
                     <connections>
+                        <outlet property="CategoryWithProductsTableView" destination="Bph-0H-O7p" id="hYp-1L-wgb"/>
                         <outlet property="featureSliderView" destination="m8Q-gT-XXL" id="loF-Dc-Qkm"/>
-                        <outlet property="searchField" destination="zmm-Db-NDd" id="Moy-sX-CMW"/>
-                        <outlet property="tableView" destination="Bph-0H-O7p" id="v7D-fZ-tEj"/>
+                        <outlet property="searchField" destination="zmm-Db-NDd" id="OzX-lh-IQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,4 +153,8 @@
             <point key="canvasLocation" x="-527" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="4" width="1080" height="720"/>
+        <image name="magnifying-glass" width="12" height="12"/>
+    </resources>
 </document>

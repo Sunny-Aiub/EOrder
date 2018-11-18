@@ -1,28 +1,32 @@
 //
-//  TableViewCell.swift
-//  CollectionView
+//  CategoryTableViewCell.swift
+//  POCEOrder
 //
-//  Created by    Ankit on 20/10/17.
-//  Copyright © 2017 Ankit. All rights reserved.
+//  Created by Md. Mahadhi Hassan Chowdhury on 11/18/18.
+//  Copyright © 2018 Md. Mahadhi Hassan Chowdhury. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+{
 
-    @IBOutlet weak var collectionView: UICollectionView!
-
-    var imageArray = [String] ()
+    @IBOutlet weak var ProductCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-
-        imageArray = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","10.jeg"]
         // Initialization code
+        
+        self.ProductCollectionView.delegate = self
+        self.ProductCollectionView.dataSource = self
+        
     }
 
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -30,15 +34,15 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return 10
+        
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? CollectionViewCell
+        
+        if let cell: ProductsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCollectionViewCell", for: indexPath) as? ProductsCollectionViewCell
         {
             let randomNumber = Int(arc4random_uniform(UInt32(imageArray.count)))
-            
             cell.imageView.image = UIImage(named: imageArray[randomNumber])
             
             return cell
@@ -50,4 +54,5 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         let size = CGSize(width: 120, height: 120)
         return size
     }
+    
 }

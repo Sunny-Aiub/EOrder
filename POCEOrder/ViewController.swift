@@ -10,18 +10,18 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var featureSliderView: UIScrollView!
-    @IBOutlet weak var searchField: DesignableTextField!
+    @IBOutlet weak var searchField: SearchTextField!
+    @IBOutlet weak var CategoryWithProductsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 120
-        tableView.tableFooterView = UIView()
+        CategoryWithProductsTableView.estimatedRowHeight = 120
+        CategoryWithProductsTableView.tableFooterView = UIView()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        CategoryWithProductsTableView.delegate = self
+        CategoryWithProductsTableView.dataSource = self
         
         searchField.delegate = self
         
@@ -119,7 +119,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
         let row = indexPath.row
         print(section, row)
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell", for: indexPath) as? CategoryTableViewCell
         {
             return cell
         }

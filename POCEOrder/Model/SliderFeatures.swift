@@ -15,3 +15,4 @@ let featureImage4 = ["title": "4", "image": "4"]
 
 var featureArray = [featureImage1,featureImage2,featureImage3,featureImage4 ]
 
+var imageArray = [ "1.jpg", "2.jpg", "3.jpg", "4-1.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpeg", "10.jpeg"]
