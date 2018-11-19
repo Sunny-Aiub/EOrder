@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A33EE34521A2CF7700294C89 /* MyTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EE34421A2CF7700294C89 /* MyTableHeader.swift */; };
+		A33EE34721A2CFCD00294C89 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EE34621A2CFCD00294C89 /* Extensions.swift */; };
 		A34F540221A124360052DBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F540121A124360052DBA3 /* AppDelegate.swift */; };
 		A34F540421A124360052DBA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F540321A124360052DBA3 /* ViewController.swift */; };
 		A34F540721A124360052DBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34F540521A124360052DBA3 /* Main.storyboard */; };
@@ -18,9 +20,15 @@
 		A3502B0A21A18DF700149FAB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0921A18DF700149FAB /* CategoryTableViewCell.swift */; };
 		A3502B0C21A18FE400149FAB /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0B21A18FE400149FAB /* ProductsCollectionViewCell.swift */; };
 		A3502B0E21A1910A00149FAB /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0D21A1910A00149FAB /* SearchTextField.swift */; };
+		A37A425021A294B60014D59A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A424F21A294B60014D59A /* CategoriesViewController.swift */; };
+		A37A425221A294CD0014D59A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A425121A294CD0014D59A /* CartViewController.swift */; };
+		A37A425421A294DB0014D59A /* ProfielViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A425321A294DB0014D59A /* ProfielViewController.swift */; };
+		A37A425721A295C40014D59A /* UILogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A425621A295C40014D59A /* UILogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A33EE34421A2CF7700294C89 /* MyTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableHeader.swift; sourceTree = "<group>"; };
+		A33EE34621A2CFCD00294C89 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A34F53FE21A124360052DBA3 /* POCEOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCEOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34F540121A124360052DBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A34F540321A124360052DBA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +42,10 @@
 		A3502B0921A18DF700149FAB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		A3502B0B21A18FE400149FAB /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3502B0D21A1910A00149FAB /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		A37A424F21A294B60014D59A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		A37A425121A294CD0014D59A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		A37A425321A294DB0014D59A /* ProfielViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfielViewController.swift; sourceTree = "<group>"; };
+		A37A425621A295C40014D59A /* UILogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +78,12 @@
 		A34F540021A124360052DBA3 /* POCEOrder */ = {
 			isa = PBXGroup;
 			children = (
+				A37A425521A295950014D59A /* Common */,
 				A34F540121A124360052DBA3 /* AppDelegate.swift */,
 				A34F540321A124360052DBA3 /* ViewController.swift */,
+				A37A425321A294DB0014D59A /* ProfielViewController.swift */,
+				A37A424F21A294B60014D59A /* CategoriesViewController.swift */,
+				A37A425121A294CD0014D59A /* CartViewController.swift */,
 				A34F540521A124360052DBA3 /* Main.storyboard */,
 				A34F540A21A124360052DBA3 /* LaunchScreen.storyboard */,
 				A3502B0221A17ED600149FAB /* Cells */,
@@ -93,6 +109,8 @@
 				A34F541521A12FB30052DBA3 /* FeatureView.xib */,
 				A34F541721A12FC50052DBA3 /* FeatureView.swift */,
 				A3502B0D21A1910A00149FAB /* SearchTextField.swift */,
+				A33EE34421A2CF7700294C89 /* MyTableHeader.swift */,
+				A33EE34621A2CFCD00294C89 /* Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -104,6 +122,14 @@
 				A3502B0B21A18FE400149FAB /* ProductsCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A37A425521A295950014D59A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A37A425621A295C40014D59A /* UILogic.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37A425421A294DB0014D59A /* ProfielViewController.swift in Sources */,
 				A3502B0C21A18FE400149FAB /* ProductsCollectionViewCell.swift in Sources */,
 				A3502B0A21A18DF700149FAB /* CategoryTableViewCell.swift in Sources */,
 				A34F541821A12FC50052DBA3 /* FeatureView.swift in Sources */,
 				A34F541B21A1342D0052DBA3 /* Data Model.swift in Sources */,
+				A33EE34521A2CF7700294C89 /* MyTableHeader.swift in Sources */,
+				A37A425721A295C40014D59A /* UILogic.swift in Sources */,
 				A3502B0E21A1910A00149FAB /* SearchTextField.swift in Sources */,
+				A33EE34721A2CFCD00294C89 /* Extensions.swift in Sources */,
 				A34F540421A124360052DBA3 /* ViewController.swift in Sources */,
+				A37A425021A294B60014D59A /* CategoriesViewController.swift in Sources */,
+				A37A425221A294CD0014D59A /* CartViewController.swift in Sources */,
 				A34F540221A124360052DBA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

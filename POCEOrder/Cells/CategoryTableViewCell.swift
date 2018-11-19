@@ -35,18 +35,33 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return sectionsData[section].items.count
+        //return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell: ProductsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCollectionViewCell", for: indexPath) as? ProductsCollectionViewCell
         {
-            let randomNumber = Int(arc4random_uniform(UInt32(imageArray.count)))
-            cell.imageView.image = UIImage(named: imageArray[randomNumber])
+//            let randomNumber = Int(arc4random_uniform(UInt32(imageArray.count)))
+//            cell.imageView.image = UIImage(named: imageArray[randomNumber])
+            
+           print(sectionsData[indexPath.section].items[indexPath.row].image)
+        
+            
+            do {
+                
+                let url = URL(string: sectionsData[indexPath.section].items[indexPath.row].image)
+                let data = try Data(contentsOf: url!)
+                cell.imageView.image = UIImage(data: data)
+            }
+            catch{
+                print(error)
+            }
             
             return cell
         }
+        
         return UICollectionViewCell()
     }
     

@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red:0.25, green:0.70, blue:0.90, alpha:1.0)
+        
+        //setUpNavigationBar(vc: self)
         CategoryWithProductsTableView.estimatedRowHeight = 120
         CategoryWithProductsTableView.tableFooterView = UIView()
         
@@ -47,7 +50,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             
             if let featureView = Bundle.main.loadNibNamed("FeatureView", owner: self, options: nil)?.first as? FeatureView{
                 
-                featureView.sliderImage.image = UIImage(named: feature["image"]!)
+                do {
+                    
+                    let url = URL(string: feature["image"]!)
+                    let data = try Data(contentsOf: url!)
+                    featureView.sliderImage.image = UIImage(data: data)
+                }
+                catch{
+                    print(error)
+                }
+                
+//                featureView.sliderImage.image = UIImage(named: feature["image"]!)
                 featureSliderView.addSubview(featureView)
                 
                 featureView.frame.size.width = self.view.bounds.size.width
@@ -91,14 +104,40 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return sectionsData.count
+        //return 5
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    // Header
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? MyTableHeader ?? MyTableHeader(reuseIdentifier: "header")
         
-        return "Section Title \(section)"
+        header.titleLabel.text = sectionsData[section].name
+        header.arrowLabel.text = "See More"
+        //header.setCollapsed(section[section].collapsed)
+        
+        header.section = section
+       // header.delegate = self
+        
+        return header
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1.0
+    }
+
+//
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        return sectionsData[section].name
+//        //return "Section Title \(section)"
+//    }
+//
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
             return 1
@@ -108,7 +147,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         let section = indexPath.section
         let row = indexPath.row
-        print(section, row)
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell", for: indexPath) as? CategoryTableViewCell
         {
@@ -123,12 +161,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let section = indexPath.section
         let row = indexPath.row
         
-        if  row == 0 && section == 0{
-            print(section,row)
-        }else{
-            print(section,row)
-            
-        }
+//        if  row == 0 && section == 0{
+//            print(section,row)
+//        }else{
+//            print(section,row)
+//
+//        }
     }
     
 }

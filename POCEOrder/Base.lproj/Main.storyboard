@@ -19,13 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8Q-gT-XXL">
-                                <rect key="frame" x="0.0" y="104" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="bCE-Qq-OO6"/>
+                                    <constraint firstAttribute="height" constant="180" id="bCE-Qq-OO6"/>
                                 </constraints>
                             </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Your Product Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Db-NDd" customClass="SearchTextField" customModule="POCEOrder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ucF-H2-Nnp"/>
                                 </constraints>
@@ -43,7 +45,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eqh-xf-QE1">
-                                <rect key="frame" x="0.0" y="304" width="375" height="314"/>
+                                <rect key="frame" x="0.0" y="284" width="375" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCell" rowHeight="120" id="tMY-ON-eYy" customClass="CategoryTableViewCell" customModule="POCEOrder">
@@ -103,7 +105,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="m8Q-gT-XXL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Fh-A6-Foz"/>
                             <constraint firstItem="zmm-Db-NDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Oi-Mq-l7t"/>
@@ -132,7 +133,7 @@
         <!--EOrder-->
         <scene sceneID="BV8-jN-T0R">
             <objects>
-                <viewController id="aId-pw-wKx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" id="aId-pw-wKx" customClass="CategoriesViewController" customModule="POCEOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gb8-5e-dyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +149,7 @@
         <!--EOrder-->
         <scene sceneID="hLg-En-fMc">
             <objects>
-                <viewController id="5Do-Zw-oEF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="5Do-Zw-oEF" customClass="CartViewController" customModule="POCEOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LKw-Z5-Dk4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +165,7 @@
         <!--EOrder-->
         <scene sceneID="USH-MM-fWi">
             <objects>
-                <viewController id="7ew-5I-Kmo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfielViewController" id="7ew-5I-Kmo" customClass="ProfielViewController" customModule="POCEOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wfT-ex-008">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +185,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Veb-GQ-be8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="B1i-oO-BTz" kind="relationship" relationship="viewControllers" id="UXW-7j-mdQ"/>

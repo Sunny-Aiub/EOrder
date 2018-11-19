@@ -8,10 +8,11 @@
 
 import Foundation
 
-let featureImage1 = ["title": "1", "image": "1.jpg" ]
-let featureImage2 = ["title": "2", "image": "2.jpg"]
-let featureImage3 = ["title": "3", "image": "3.jpg"]
-let featureImage4 = ["title": "4", "image": "4"]
+
+let featureImage1 = ["title": "1", "image": "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/n/o/nobanno_banner_2.png" ]
+let featureImage2 = ["title": "2", "image": "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/c/i/citgard.jpg"]
+let featureImage3 = ["title": "3", "image": "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/e/n/enigma.jpg"]
+let featureImage4 = ["title": "4", "image": "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/k/i/kinlei_jitben_main_banner.jpg"]
 
 var featureArray = [featureImage1,featureImage2,featureImage3,featureImage4 ]
 
@@ -32,21 +33,45 @@ public struct Item {
     }
 }
 
+public struct HighlightedCategory {
+    
+    var name: String
+    var image: String
+    
+    public init(name: String, image: String) {
+        self.name = name
+        self.image = image
+    }
+}
+
+public struct HighlightedCategoories {
+    var name: String
+    var highlightedCategories: [HighlightedCategory]
+    
+    public init(name: String, highlightedCategories: [HighlightedCategory]) {
+        self.name = name
+        self.highlightedCategories = highlightedCategories
+    }
+}
+
 public struct Section {
     var name: String
     var items: [Item]
     var collapsed: Bool
+    var highlightedCategories : [HighlightedCategory]
     
-    public init(name: String, items: [Item], collapsed: Bool = false) {
+    
+    public init(name: String, items: [Item], collapsed: Bool = false, highlightedCategories:[HighlightedCategory] ) {
         self.name = name
         self.items = items
         self.collapsed = collapsed
+        self.highlightedCategories = highlightedCategories
     }
 }
 
 public var sectionsData: [Section] = [
     
-    Section(name: "Home & Living", items: [
+    Section(name: "CURRENT CAMPAIGNS", items: [
         
         Item(name: "Camry Mechanical Kitchen Weight Scale", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/c/a/camry-kitchen-scale-orange.jpg", price: "$775"),
         
@@ -60,9 +85,9 @@ public var sectionsData: [Section] = [
         
         Item(name: "Disney Robot Switch & Socket", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/s/s/ss199.jpg", price: "$199")
         
-        ]),
+        ], highlightedCategories: []),
     
-    Section(name: "Mobile Accessories", items: [
+    Section(name: "NEW RELEASED", items: [
         
         Item(name: "Zhiyun Smooth 4 3 Axis Handheld Gimbal Stabilizer", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/small_image/205x205/9df78eab33525d08d6e5fb8d27136e95/g/i/gimble-d0388f5002b9sdfdfa8b4438660ba450988.jpg", price: "$14909"),
         
@@ -76,9 +101,9 @@ public var sectionsData: [Section] = [
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$12999")
         
-        ]),
+        ], highlightedCategories: []),
     
-    Section(name: "Electronics & Gadgtets", items: [
+    Section(name: "CATAGORY HIGHLIGHT", items: [
 
         Item(name: "Zhiyun Smooth 4 3 Axis Handheld Gimbal Stabilizer", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/small_image/205x205/9df78eab33525d08d6e5fb8d27136e95/g/i/gimble-d0388f5002b9sdfdfa8b4438660ba450988.jpg", price: "$14909"),
         
@@ -91,9 +116,15 @@ public var sectionsData: [Section] = [
         Item(name: "Xiaomi Amazfit Stratos Smart Sport Watch ", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-amazfit-startos-samrtsport-watch-international-version.jpg", price: "$14999"),
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$12999")
+        ], highlightedCategories: [
+            HighlightedCategory(name: "Handicrafts", image: "http://eorder.com.bd/pub/media/wysiwyg/Handicraft.jpg"),
+            
+            HighlightedCategory(name: "Handicrafts", image: "http://eorder.com.bd/pub/media/wysiwyg/mobile_acc.jpg"),
+            
+            HighlightedCategory(name: "Handicrafts", image: "http://eorder.com.bd/pub/media/wysiwyg/painting.jpg")
         ]),
     
-    Section(name: "Arts & Crafts", items: [
+    Section(name: "BEST SELLERS", items: [
         
         Item(name: "Zhiyun Smooth 4 3 Axis Handheld Gimbal Stabilizer", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/small_image/205x205/9df78eab33525d08d6e5fb8d27136e95/g/i/gimble-d0388f5002b9sdfdfa8b4438660ba450988.jpg", price: "$14909"),
         
@@ -107,7 +138,7 @@ public var sectionsData: [Section] = [
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$12999")
         
-        ]),
+        ], highlightedCategories: []),
     
     Section(name: "AutoMobiles", items: [
         
@@ -123,7 +154,7 @@ public var sectionsData: [Section] = [
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$12999")
         
-        ]),
+        ], highlightedCategories: []),
     
     Section(name: "Gifts & Toys", items: [
         
@@ -139,7 +170,7 @@ public var sectionsData: [Section] = [
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$12999")
         
-        ]),
+        ], highlightedCategories: []),
     
     Section(name: "Below $399", items: [
         
@@ -155,7 +186,7 @@ public var sectionsData: [Section] = [
         
         Item(name: "Microlab Speaker FC861 5:1", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/m/i/microlab-speaker-fc861.jpg", price: "$199")
         
-        ])
+        ], highlightedCategories: [])
     
     
 ]
