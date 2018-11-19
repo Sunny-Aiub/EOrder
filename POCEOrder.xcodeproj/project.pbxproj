@@ -14,7 +14,7 @@
 		A34F540C21A124360052DBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34F540A21A124360052DBA3 /* LaunchScreen.storyboard */; };
 		A34F541621A12FB30052DBA3 /* FeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34F541521A12FB30052DBA3 /* FeatureView.xib */; };
 		A34F541821A12FC50052DBA3 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F541721A12FC50052DBA3 /* FeatureView.swift */; };
-		A34F541B21A1342D0052DBA3 /* SliderFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */; };
+		A34F541B21A1342D0052DBA3 /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F541A21A1342D0052DBA3 /* Data Model.swift */; };
 		A3502B0A21A18DF700149FAB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0921A18DF700149FAB /* CategoryTableViewCell.swift */; };
 		A3502B0C21A18FE400149FAB /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0B21A18FE400149FAB /* ProductsCollectionViewCell.swift */; };
 		A3502B0E21A1910A00149FAB /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3502B0D21A1910A00149FAB /* SearchTextField.swift */; };
@@ -30,7 +30,7 @@
 		A34F540D21A124360052DBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A34F541521A12FB30052DBA3 /* FeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureView.xib; sourceTree = "<group>"; };
 		A34F541721A12FC50052DBA3 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
-		A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFeatures.swift; sourceTree = "<group>"; };
+		A34F541A21A1342D0052DBA3 /* Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Model.swift"; sourceTree = "<group>"; };
 		A3502B0921A18DF700149FAB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		A3502B0B21A18FE400149FAB /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3502B0D21A1910A00149FAB /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		A34F541921A134040052DBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A34F541A21A1342D0052DBA3 /* SliderFeatures.swift */,
+				A34F541A21A1342D0052DBA3 /* Data Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				A3502B0C21A18FE400149FAB /* ProductsCollectionViewCell.swift in Sources */,
 				A3502B0A21A18DF700149FAB /* CategoryTableViewCell.swift in Sources */,
 				A34F541821A12FC50052DBA3 /* FeatureView.swift in Sources */,
-				A34F541B21A1342D0052DBA3 /* SliderFeatures.swift in Sources */,
+				A34F541B21A1342D0052DBA3 /* Data Model.swift in Sources */,
 				A3502B0E21A1910A00149FAB /* SearchTextField.swift in Sources */,
 				A34F540421A124360052DBA3 /* ViewController.swift in Sources */,
 				A34F540221A124360052DBA3 /* AppDelegate.swift in Sources */,

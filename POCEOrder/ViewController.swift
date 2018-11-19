@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var featureSliderView: UIScrollView!
     @IBOutlet weak var searchField: SearchTextField!
@@ -48,24 +48,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let featureView = Bundle.main.loadNibNamed("FeatureView", owner: self, options: nil)?.first as? FeatureView{
                 
                 featureView.sliderImage.image = UIImage(named: feature["image"]!)
-                
                 featureSliderView.addSubview(featureView)
                 
                 featureView.frame.size.width = self.view.bounds.size.width
                 featureView.frame.origin.x = CGFloat(index) *  self.view.bounds.size.width
-                
                 featureView.sliderImage.tag = index
-                
                 featureView.sliderImagePageControl.numberOfPages = featureArray.count
-                
                 featureView.sliderImagePageControl.currentPage = Int(index)
                 
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                
                 featureView.sliderImage.isUserInteractionEnabled = true
                 featureView.sliderImage.addGestureRecognizer(tapGestureRecognizer)
             }
             
         }
+    
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -91,13 +89,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-    
-    
-}
-
-
-extension ViewController : UITableViewDelegate, UITableViewDataSource{
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
