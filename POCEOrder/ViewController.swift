@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     @IBOutlet weak var searchField: SearchTextField!
     @IBOutlet weak var CategoryWithProductsTableView: UITableView!
     
+    var titleHeader: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,6 +116,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? MyTableHeader ?? MyTableHeader(reuseIdentifier: "header")
         
         header.titleLabel.text = sectionsData[section].name
+        self.titleHeader = sectionsData[section].name
         header.arrowLabel.text = "See More"
         //header.setCollapsed(section[section].collapsed)
         
@@ -148,10 +151,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let section = indexPath.section
         _ = indexPath.row
         
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell", for: indexPath) as? CategoryTableViewCell
         {
             cell.sectionForProduct = section
             print(cell.sectionForProduct)
+            cell.titleHeader = titleHeader
             
             return cell
         }
