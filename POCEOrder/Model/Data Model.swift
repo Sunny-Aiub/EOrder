@@ -105,7 +105,7 @@ public var sectionsData: [Section] = [
     
     Section(name: "CATAGORY HIGHLIGHT", items: [
 
-        Item(name: "Zhiyun Smooth 4 3 Axis Handheld Gimbal Stabilizer", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/small_image/205x205/9df78eab33525d08d6e5fb8d27136e95/g/i/gimble-d0388f5002b9sdfdfa8b4438660ba450988.jpg", price: "$14909"),
+        Item(name: "Gimbal Stabilizer", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/small_image/205x205/9df78eab33525d08d6e5fb8d27136e95/g/i/gimble-d0388f5002b9sdfdfa8b4438660ba450988.jpg", price: "$14909"),
         
         Item(name: "Xiaomi Amazfit Stratos Smart Sport Watch ", detail: "This kitchen scale can meet your basic food weighing needs, with a large bowl. This Kitchen scale is with fashion design, easy to read according to a big dial. It is perfect for precise measuring of different ingredients, as well as for general household use.", image: "https://d1lwfjp709sq0o.cloudfront.net/media/catalog/product/cache/1/thumbnail/100x100/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-amazfit-startos-samrtsport-watch-international-version.jpg", price: "$14999"),
         

@@ -13,10 +13,13 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var ProductCollectionView: UICollectionView!
     
+    
+    var sectionForProduct: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
+        // Initialization code
         self.ProductCollectionView.delegate = self
         self.ProductCollectionView.dataSource = self
         
@@ -35,7 +38,12 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return sectionsData[section].items.count
+        print(sectionForProduct)
+        print(sectionsData[sectionForProduct].items.count)
+       return sectionsData[sectionForProduct].items.count
+        
+       // return 1
+
         //return 5
     }
     
@@ -46,12 +54,9 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
 //            let randomNumber = Int(arc4random_uniform(UInt32(imageArray.count)))
 //            cell.imageView.image = UIImage(named: imageArray[randomNumber])
             
-           print(sectionsData[indexPath.section].items[indexPath.row].image)
-        
-            
-            do {
+          do {
                 
-                let url = URL(string: sectionsData[indexPath.section].items[indexPath.row].image)
+                let url = URL(string: sectionsData[sectionForProduct].items[indexPath.row].image)
                 let data = try Data(contentsOf: url!)
                 cell.imageView.image = UIImage(data: data)
             }

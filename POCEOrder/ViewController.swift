@@ -146,10 +146,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let section = indexPath.section
-        let row = indexPath.row
+        _ = indexPath.row
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCell", for: indexPath) as? CategoryTableViewCell
         {
+            cell.sectionForProduct = section
+            print(cell.sectionForProduct)
+            
             return cell
         }
         
@@ -158,8 +161,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let section = indexPath.section
-        let row = indexPath.row
+        _ = indexPath.section
+        _ = indexPath.row
         
 //        if  row == 0 && section == 0{
 //            print(section,row)
