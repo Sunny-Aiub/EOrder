@@ -8,13 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+protocol ProductClicked {
+    func didSelectProduct()
+}
+
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, ProductClicked {
+    
+    func didSelectProduct() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "ProductOverviewTableViewController") as! ProductOverviewTableViewController
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
     
     @IBOutlet weak var featureSliderView: UIScrollView!
     @IBOutlet weak var searchField: SearchTextField!
     @IBOutlet weak var CategoryWithProductsTableView: UITableView!
     
     var titleHeader: String = ""
+    var delegate : ProductClicked?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,6 +170,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             cell.sectionForProduct = section
             print(cell.sectionForProduct)
             cell.titleHeader = titleHeader
+            
+            
+            cell.delegate = self
             
             return cell
         }

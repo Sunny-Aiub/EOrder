@@ -1,21 +1,28 @@
 //
-//  ProfielViewController.swift
+//  ShowImageViewController.swift
 //  POCEOrder
 //
-//  Created by Md. Mahadhi Hassan Chowdhury on 11/19/18.
+//  Created by Md. Mahadhi Hassan Chowdhury on 11/26/18.
 //  Copyright © 2018 Md. Mahadhi Hassan Chowdhury. All rights reserved.
 //
 
 import UIKit
 
-class ProfielViewController: UIViewController {
+class ShowImageViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage? {
+        didSet {
+            self.imageView?.image = image
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red:0.25, green:0.70, blue:0.90, alpha:1.0)
-        // Do any additional setup after loading the view.
+        self.imageView.image = image
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

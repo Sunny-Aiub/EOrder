@@ -20,4 +20,5 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    
 }

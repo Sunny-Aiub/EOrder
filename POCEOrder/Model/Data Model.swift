@@ -16,7 +16,16 @@ let featureImage4 = ["title": "4", "image": "http://eorder.com.bd/pub/media/coda
 
 var featureArray = [featureImage1,featureImage2,featureImage3,featureImage4 ]
 
-var imageArray = [ "1.jpg", "2.jpg", "3.jpg", "4-1.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpeg", "10.jpeg"]
+var showImages = [String]()
+
+
+
+var imageArray = [
+    "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/n/o/nobanno_banner_2.png",
+    "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/c/i/citgard.jpg",
+    "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/e/n/enigma.jpg",
+    "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/k/i/kinlei_jitben_main_banner.jpg",
+    "http://eorder.com.bd/pub/media/codazon/slideshow/cache/1900x660/e/n/enigma.jpg"]
 
 public struct Item {
     

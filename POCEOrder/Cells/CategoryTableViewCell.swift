@@ -8,14 +8,21 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductClicked
 {
+    
+    func didSelectProduct() {
+        
+        delegate?.didSelectProduct()
+    }
+    
     
     @IBOutlet weak var ProductCollectionView: UICollectionView!
     
     
     var sectionForProduct: Int = 0
     var titleHeader : String = ""
+    var delegate: ProductClicked?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,6 +82,7 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
                 catch{
                     print(error)
                 }
+                
                 return cell
                 
                 
@@ -98,6 +106,7 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
                 //cell.oldPrice.text = sectionsData[sectionForProduct].items[indexPath.row].price
                 cell.newPrice.text = sectionsData[sectionForProduct].items[indexPath.row].price
                 
+
                 return cell
                 
             }
@@ -108,6 +117,15 @@ class CategoryTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         let size = CGSize(width: 160, height: 200)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        delegate?.didSelectProduct()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "ProductOverviewTableViewController") as! ProductOverviewTableViewController
+//        self.navigationController.pushViewController(secondViewController, animated: true)
+        
     }
     
 }
